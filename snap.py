@@ -3,7 +3,7 @@ import time
 
 camera = camera_factory()
 snap = camera.snapshot()
-path = "snaps/snap%d.jpg" % time.time()
+path = "img/snap%d.jpg" % time.time()
 with open(path, "w") as outfile:
 	outfile.write(snap)
 
