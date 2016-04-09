@@ -7,5 +7,5 @@ path = "img/snap%d.jpg" % time.time()
 with open(path, "w") as outfile:
 	outfile.write(snap)
 
-status = api.wait(response['token'], timeout=30)
-print str(status["name"])
+#status = api.wait(response['token'], timeout=30)
+#print str(status["name"])
