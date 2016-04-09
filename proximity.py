@@ -21,8 +21,10 @@ def measure():
     GPIO.output(trig_pin, True)
     time.sleep(0.00001)
     GPIO.output(trig_pin, False)
-    while GPIO.input(echo_pin)==0:
+    while GPIO.input(echo_pin) == 0:
         pulse_start = time.time()
+        if time.time() - pulse_start >  3:
+            return "No distance recorded."
     while GPIO.input(echo_pin)==1:
         pulse_end = time.time()
     pulse_duration = pulse_end - pulse_start
@@ -31,6 +33,6 @@ def measure():
 
 for i in range(100):
 	print measure()
-        time.sleep(5)
+    time.sleep(5)
 
 GPIO.cleanup()
