@@ -18,12 +18,12 @@ time.sleep(2)
 print "Let's start measuring distances!"
 
 def measure():
-    GPIO.output(TRIG, True)
+    GPIO.output(trig_pin, True)
     time.sleep(0.00001)
-    GPIO.output(TRIG, False)
-    while GPIO.input(ECHO)==0:
+    GPIO.output(trig_pin, False)
+    while GPIO.input(echo_pin)==0:
         pulse_start = time.time()
-    while GPIO.input(ECHO)==1:
+    while GPIO.input(echo_pin)==1:
         pulse_end = time.time()
     pulse_duration = pulse_end - pulse_start
     distance = round(pulse_duration*17150, 2)
@@ -31,5 +31,6 @@ def measure():
 
 for i in range(100):
 	print measure()
+        time.sleep(5)
 
 GPIO.cleanup()
