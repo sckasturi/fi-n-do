@@ -28,7 +28,7 @@ We built the device using a Raspberry Pi to power the whole thing. The Laborator
 - How to multithread
 - How to use Foscam
 
-## What's next for What does Dan Hlavenka Look Like
+## What's Next?
 
 - Faster Image Recognition
 - Better Footstep Detection
